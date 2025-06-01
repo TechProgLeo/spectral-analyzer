@@ -5,8 +5,6 @@ It serves as the communication bridge between the frontend (React.js) and the ES
 
 📁 Project Structure
 graphql
-Kopieren
-Bearbeiten
 src/
 ├── config/                 # Configuration classes (CORS, InfluxDB)
 ├── controller/             # REST controllers for ESP32 & Spectral Data
@@ -30,8 +28,6 @@ React Frontend (running on http://localhost:3001)
 Set these values in your application.properties:
 
 properties
-Kopieren
-Bearbeiten
 influxdb.url=http://192.168.43.146:8086
 influxdb.token=YOUR_INFLUXDB_TOKEN
 influxdb.org=d8481950cdbfec67
@@ -47,8 +43,6 @@ Endpoint: POST /api/esp32/command
 Payload:
 
 json
-Kopieren
-Bearbeiten
 {
   "command": "s"
 }
@@ -68,8 +62,6 @@ Endpoint: GET /api/spectral/data
 Response:
 
 json
-Kopieren
-Bearbeiten
 [
   {
     "wavelength": 410.0,
@@ -84,8 +76,6 @@ The values are normalized (%) using pre-defined denominators and corrected for d
 The application allows requests from http://localhost:3001 (React frontend):
 
 java
-Kopieren
-Bearbeiten
 registry.addMapping("/api/**")
         .allowedOrigins("http://localhost:3001")
         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
@@ -110,8 +100,6 @@ After measurement, fetch results from /api/spectral/data.
 
 🚀 Run Locally
 bash
-Kopieren
-Bearbeiten
 # Build and run
 mvn spring-boot:run
 📡 Dependencies
